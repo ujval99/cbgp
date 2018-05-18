@@ -1,0 +1,5 @@
+name: rxfitnesslabs_custom
+type: module
+description: Relation nodes
+package: Custom
+core: 8.x

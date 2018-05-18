@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function rxfitnesslabs_custom_schema() {
+  $schema['message'] = array(
+  'description' => 'Stores message information.',
+    'fields' => array(
+      'mid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'description' => "The message id.",
+      ),
+      'msg_owner_id' => array(
+        'type' => 'int',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Message Sender id.",
+      ),
+      'msg_owner_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "Message Sender name.",
+      ),
+      'msg_owner_picture_id' => array(
+        'type' => 'int',
+        'length' => 10,
+        'description' => "Message owner picture target id.",
+      ),
+      'msg_recipient_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Message recipient id.",
+      ),
+      'msg_recipient_name' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "Message recipient name.",
+      ),
+      'msg_recipient_picture_id' => array(
+        'type' => 'int',
+        'length' => 10,
+        'description' => "Message recipient picture target id.",
+      ),
+      'msg' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => "Message.",
+      ),
+      'msg_created' => array(
+        'type' => 'int',
+        'length' => 10,
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Message Created time.",
+      ),
+      'end_user' => array(
+        'type' => 'int',
+        'length' => 10,
+        'description' => "End user id.",
+      ),
+      'conversation_id' => array(
+        'type' => 'int',
+        'length' => 10,
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Conversation ID.",
+      ),
+    ),
+    'primary key' => array('mid'),
+  );
+
+  return $schema;
+}

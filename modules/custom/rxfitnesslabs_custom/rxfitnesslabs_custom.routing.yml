@@ -1,0 +1,14 @@
+rxfitnesslabs_custom.user_id:
+    path: /inbox/{user_id}
+    defaults:
+        _controller: Drupal\rxfitnesslabs_custom\Controller\RXFitnessLabsController::rxfitnesslabs
+    requirements:
+        _permission: 'access content'
+
+rxfitnesslabs_custom.messages_list_page:
+    path: /message_list
+    defaults:
+        _controller: Drupal\rxfitnesslabs_custom\Controller\RXFitnessLabsController::rxfitnesslabs_message_list
+        _title: 'Message Dashboard'
+    requirements:
+        _permission: 'access content'

@@ -1,0 +1,6 @@
+notification:
+    path: /send/notification
+    defaults:
+        _controller: Drupal\cbgp_session\Controller\CBGP_SessionController::cbgp_session
+    requirements:
+        _permission: 'access content'

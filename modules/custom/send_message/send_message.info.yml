@@ -1,0 +1,5 @@
+name: Send Message
+type: module
+description: Send Message with Onesignal rest API
+core: 8.x
+package: Custom

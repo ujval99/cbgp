@@ -1,0 +1,6 @@
+rxfitnesslabs_custom.admin:
+  title: 'Messages'
+  description: 'List on Messages'
+  parent: system.admin
+  route_name: rxfitnesslabs_custom.messages_list_page
+  weight: 100

@@ -1,0 +1,18 @@
+<?php
+
+function rxfitnesslabs_custom_theme($existing, $type, $theme, $path) {
+  return [
+    'message_dashboard' => [
+      'variables' => ['test_var' => array(),'conversation_var' => array()],
+    ],
+  ];
+}
+
+function rxfitnesslabs_custom_user_logout($account) {
+  $query = \Drupal::database()->update('user__field_ws_chat_key');
+  $query->fields([
+  'field_ws_chat_key_value' => '',
+  ]);
+  $query->condition('entity_id',$account->id());
+  $query->execute();
+}

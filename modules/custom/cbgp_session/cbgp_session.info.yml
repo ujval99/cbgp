@@ -1,0 +1,5 @@
+name: cbgp_session
+type: module
+description: Shows Session of user
+package: Custom
+core: 8.x

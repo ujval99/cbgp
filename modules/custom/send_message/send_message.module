@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains send_message.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function send_message_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the send_message module.
+    case 'help.page.send_message':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Send Message rest API') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function send_message_theme() {
+  return [
+    'send_message' => [
+      'render element' => 'children',
+    ],
+  ];
+}
